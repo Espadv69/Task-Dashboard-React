@@ -36,6 +36,11 @@ export const TaskDashboard = () => {
     )
   }
 
+  // Function to delete a task
+  const deleteTask = (taskId) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId))
+  }
+
   return (
     <div>
       <h1>hello</h1>
