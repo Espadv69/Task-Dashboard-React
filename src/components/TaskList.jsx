@@ -1,7 +1,7 @@
 export const TaskList = ({
   filteredTasks,
   toggleTaskCompletion,
-  deleteTask,
+  deleteTask
 }) => {
   return (
     <ul>
@@ -15,7 +15,6 @@ export const TaskList = ({
           <span
             style={{
               textDecoration: task.completed ? 'line-through' : 'none',
-              marginLeft: '10px',
             }}
           >
             {task.name}
