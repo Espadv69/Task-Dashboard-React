@@ -4,6 +4,7 @@ import { TaskForm } from './TaskForm.jsx'
 import { TaskList } from './TaskList.jsx'
 
 import { useLocalStorage } from '../hooks/useLocalStorage.js'
+import { generateId } from '../utils/generateId.js'
 
 export const TaskDashboard = () => {
   const [tasks, setTasks] = useLocalStorage('tasks') // State for tasks
@@ -12,7 +13,7 @@ export const TaskDashboard = () => {
   // Function to add a task
   const addTask = (taskName) => {
     const newTask = {
-      id: Date.now(),
+      id: generateId(),
       name: taskName,
       completed: false,
     }
