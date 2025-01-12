@@ -27,6 +27,15 @@ export const TaskDashboard = () => {
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
+  // Function to toggle task completion
+  const toggleTaskCompletion = (taskId) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) => {
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      })
+    )
+  }
+
   return (
     <div>
       <h1>hello</h1>
