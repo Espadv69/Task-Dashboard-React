@@ -49,8 +49,66 @@ export const TaskDashboard = () => {
   })
 
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <main>
+      {/* Filtro de tareas */}
+      <div>
+        <button onClick={() => setFilter('all')}>All</button>
+        <button onClick={() => setFilter('completed')}>Completed</button>
+        <button onClick={() => setFilter('pending')}>Pending</button>
+      </div>
+      {/* Lista de tareas */}
+      <ul>
+        {filteredTasks.map((task) => (
+          <li key={task.id} style={{ margin: '10px 0' }}>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleTaskCompletion(task.id)}
+            />
+            <span
+              style={{
+                textDecoration: task.completed ? 'line-through' : 'none',
+                marginLeft: '10px',
+              }}
+            >
+              {task.name}
+            </span>
+            <button
+              onClick={() => deleteTask(task.id)}
+              style={{ marginLeft: '10px' }}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {/* Agregar tarea */}
+      <TaskForm onAddTask={addTask} />
+    </main>
+  )
+}
+
+// Componente de formulario para agregar tareas
+const TaskForm = ({ onAddTask }) => {
+  const [taskName, setTaskName] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (taskName.trim() === '') return
+    onAddTask(taskName)
+    setTaskName('') // Limpia el input
+  }
+
+  return (
+    <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+      <input
+        type="text"
+        value={taskName}
+        onChange={(e) => setTaskName(e.target.value)}
+        placeholder="Enter a task..."
+      />
+      <button type="submit">Add Task</button>
+    </form>
   )
 }
