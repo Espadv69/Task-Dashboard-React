@@ -5,6 +5,14 @@ export const TaskDashboard = () => {
   const [filter, setFilter] = useState('all') // State for filter
 
   useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'))
+    if (savedTasks) {
+      setTasks(savedTasks)
+    }
+  }, [])
+
+  // Save tasks to localStorage
+  useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks))
   }, [tasks])
 
