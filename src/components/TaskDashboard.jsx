@@ -10,7 +10,7 @@ export const TaskDashboard = () => {
   // Load tasks from localStorage
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks'))
-    if (savedTasks) {
+    if (savedTasks.length > 0) {
       setTasks(savedTasks)
     }
   }, [])
@@ -33,9 +33,9 @@ export const TaskDashboard = () => {
   // Function to toggle task completion
   const toggleTaskCompletion = (taskId) => {
     setTasks((prevTasks) =>
-      prevTasks.map((task) => {
+      prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
-      })
+      )
     )
   }
 
@@ -64,8 +64,8 @@ export const TaskDashboard = () => {
       <TaskList
         filteredTasks={filteredTasks}
         toggleTaskCompletion={toggleTaskCompletion}
-        deleteTask={deleteTask} />
-      
+        deleteTask={deleteTask}
+      />
 
       {/* Agregar tarea */}
       <TaskForm onAddTask={addTask} />
