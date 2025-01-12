@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 
+import { TaskForm } from './TaskForm.jsx'
+import { TaskList } from './TaskList.jsx'
+
 export const TaskDashboard = () => {
   const [tasks, setTasks] = useState([]) // State for tasks
   const [filter, setFilter] = useState('all') // State for filter
@@ -56,59 +59,16 @@ export const TaskDashboard = () => {
         <button onClick={() => setFilter('completed')}>Completed</button>
         <button onClick={() => setFilter('pending')}>Pending</button>
       </div>
+
       {/* Lista de tareas */}
-      <ul>
-        {filteredTasks.map((task) => (
-          <li key={task.id} style={{ margin: '10px 0' }}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTaskCompletion(task.id)}
-            />
-            <span
-              style={{
-                textDecoration: task.completed ? 'line-through' : 'none',
-                marginLeft: '10px',
-              }}
-            >
-              {task.name}
-            </span>
-            <button
-              onClick={() => deleteTask(task.id)}
-              style={{ marginLeft: '10px' }}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <TaskList
+        filteredTasks={filteredTasks}
+        toggleTaskCompletion={toggleTaskCompletion}
+        deleteTask={deleteTask} />
+      
 
       {/* Agregar tarea */}
       <TaskForm onAddTask={addTask} />
     </main>
-  )
-}
-
-// Componente de formulario para agregar tareas
-const TaskForm = ({ onAddTask }) => {
-  const [taskName, setTaskName] = useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (taskName.trim() === '') return
-    onAddTask(taskName)
-    setTaskName('') // Limpia el input
-  }
-
-  return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
-      <input
-        type="text"
-        value={taskName}
-        onChange={(e) => setTaskName(e.target.value)}
-        placeholder="Enter a task..."
-      />
-      <button type="submit">Add Task</button>
-    </form>
   )
 }
