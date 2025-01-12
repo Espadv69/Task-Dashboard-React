@@ -4,6 +4,9 @@ export const TaskDashboard = () => {
   const [tasks, setTasks] = useState([]) // State for tasks
   const [filter, setFilter] = useState('all') // State for filter
 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   return (
     <div>
