@@ -12,3 +12,17 @@ This project is a medium-sized application built with React and Vite. The dashbo
 - Responsive design with basic CSS or TailwindCSS.
 
 ---
+
+```plaintext
+src/
+  components/
+    TaskDashboard.jsx
+    TaskList.jsx
+    TaskItem.jsx
+    TaskForm.jsx
+    NotificationBar.jsx
+  context/
+    NotificationContext.jsx
+  utils/
+    mockNotifications.js
+```
