@@ -106,3 +106,16 @@
   color: lightcoral;
   background: transparent;
 }
+
+.notification-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification {
+  padding: .4rem;
+
+  border: 1px solid whitesmoke;
+}
