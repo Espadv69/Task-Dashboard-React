@@ -27,8 +27,8 @@ export const NotificationBar = () => {
 
       setTimeout(() => {
         setIsVisible(false)
-      }, 3000)
-    }, 5000)
+      }, 4000)
+    }, 8000)
 
     return () => clearInterval(interval)
   }, [])
