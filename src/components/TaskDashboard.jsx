@@ -6,6 +6,8 @@ import { TaskList } from './TaskList.jsx'
 import { useLocalStorage } from '../hooks/useLocalStorage.js'
 import { generateId } from '../utils/generateId.js'
 
+import './css/TaskDashboard.css'
+
 export const TaskDashboard = () => {
   const [tasks, setTasks] = useLocalStorage('tasks') // State for tasks
   const [filter, setFilter] = useState('all') // State for filter
@@ -43,10 +45,10 @@ export const TaskDashboard = () => {
 
   return (
     <main>
-      <div className='filters-container'>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
+      <div className="filters-container">
+        <button className='btn-filters' onClick={() => setFilter('all')}>All</button>
+        <button className='btn-filters' onClick={() => setFilter('completed')}>Completed</button>
+        <button className='btn-filters' onClick={() => setFilter('pending')}>Pending</button>
       </div>
 
       <TaskList
