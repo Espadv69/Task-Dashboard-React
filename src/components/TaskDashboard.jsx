@@ -45,10 +45,24 @@ export const TaskDashboard = () => {
 
   return (
     <main>
+      <h1 className="h1-title">Task Dashboard</h1>
+
       <div className="filters-container">
-        <button className='btn-filters all' onClick={() => setFilter('all')}>All</button>
-        <button className='btn-filters completed' onClick={() => setFilter('completed')}>Completed</button>
-        <button className='btn-filters pending' onClick={() => setFilter('pending')}>Pending</button>
+        <button className="btn-filters all" onClick={() => setFilter('all')}>
+          All
+        </button>
+        <button
+          className="btn-filters completed"
+          onClick={() => setFilter('completed')}
+        >
+          Completed
+        </button>
+        <button
+          className="btn-filters pending"
+          onClick={() => setFilter('pending')}
+        >
+          Pending
+        </button>
       </div>
 
       <TaskList
