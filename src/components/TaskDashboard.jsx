@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { NotificationBar } from './NotificationBar.jsx'
 import { TaskForm } from './TaskForm.jsx'
 import { TaskList } from './TaskList.jsx'
 
@@ -72,6 +73,8 @@ export const TaskDashboard = () => {
       />
 
       <TaskForm onAddTask={addTask} />
+
+      <NotificationBar tasks={tasks} />
     </main>
   )
 }
