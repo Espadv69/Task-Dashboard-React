@@ -32,4 +32,14 @@ export const NotificationBar = () => {
 
     return () => clearInterval(interval)
   }, [])
+
+  return (
+    <div className="notification-container">
+      {isVisible && (
+        <div className="notification">
+          <p>{notifications[notifications.length - 1]}</p>
+        </div>
+      )}
+    </div>
+  )
 }
