@@ -1,13 +1,14 @@
 export const TaskList = ({
   filteredTasks,
   toggleTaskCompletion,
-  deleteTask
+  deleteTask,
 }) => {
   return (
-    <ul>
+    <ul className="task-list">
       {filteredTasks.map((task) => (
-        <li key={task.id}>
+        <li key={task.id} className="task-item">
           <input
+            className="task-checkbox"
             type="checkbox"
             checked={task.completed}
             onChange={() => toggleTaskCompletion(task.id)}
@@ -19,7 +20,12 @@ export const TaskList = ({
           >
             {task.name}
           </span>
-          <button onClick={() => deleteTask(task.id)}>Delete</button>
+          <button
+            className="task-button-checkbox"
+            onClick={() => deleteTask(task.id)}
+          >
+            Delete
+          </button>
         </li>
       ))}
     </ul>
