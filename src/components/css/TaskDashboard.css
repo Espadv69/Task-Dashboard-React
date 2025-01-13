@@ -84,5 +84,25 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 3px;
+}
+
+.task-item .task-checkbox {
+  cursor: pointer;
+
+  width: 20px;
+  height: 20px;
+}
+
+.task-item .task-button-list {
+  cursor: pointer;
+
+  padding: .35rem;
+
+  border: 1px solid lightcoral;
+  border-radius: 5px;
+
+  color: lightcoral;
+  background: transparent;
 }
