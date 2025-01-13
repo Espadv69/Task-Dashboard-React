@@ -12,4 +12,24 @@ export const NotificationBar = () => {
     'You have 2 completed tasks',
     'You have 15 pending tasks',
   ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)]
+
+      setNotifications((prevNotifications) => [
+        ...prevNotifications,
+        randomMessage,
+      ])
+
+      setIsVisible(true)
+
+      setTimeout(() => {
+        setIsVisible(false)
+      }, 3000)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
 }
