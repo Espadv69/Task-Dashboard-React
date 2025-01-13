@@ -20,3 +20,18 @@
 
   background: transparent;
 }
+
+.btn-filters.all {
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.btn-filters.completed {
+  border-color: greenyellow;
+  color: greenyellow;
+}
+
+.btn-filters.pending {
+  border-color: tomato;
+  color: tomato;
+}
