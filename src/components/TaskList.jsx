@@ -21,7 +21,7 @@ export const TaskList = ({
             {task.name}
           </span>
           <button
-            className="task-button-checkbox"
+            className="task-button-list"
             onClick={() => deleteTask(task.id)}
           >
             Delete
