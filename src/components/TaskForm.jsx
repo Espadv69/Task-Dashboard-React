@@ -11,14 +11,15 @@ export const TaskForm = ({ onAddTask }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+    <form onSubmit={handleSubmit} className='task-form'>
       <input
+        className='task-input'
         type="text"
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
         placeholder="Enter a task..."
       />
-      <button type="submit">Add Task</button>
+      <button className='task-button' type="submit">Add Task</button>
     </form>
   )
 }
