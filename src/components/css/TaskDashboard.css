@@ -1,0 +1,22 @@
+.filters-container {
+  margin: 10px auto;
+
+  width: 100%;
+  max-width: 400px;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-filters {
+  width: 100%;
+  max-width: 100px;
+
+  padding: .2rem;
+
+  border: 2px solid transparent;
+  border-radius: 5px;
+
+  background: transparent;
+}
