@@ -39,6 +39,8 @@
 }
 
 .task-form {
+  margin-top: 10px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +50,19 @@
 .task-input {
   padding: .4rem;
 
-  border: 2px solid transparent;
+  border: 1.5px solid white;
+  border-radius: 5px;
+
+  color: white;
+  background: transparent;
+}
+
+.task-button {
+  cursor: pointer;
+
+  padding: .4rem;
+
+  border: 2px solid white;
   border-radius: 5px;
 
   color: white;
